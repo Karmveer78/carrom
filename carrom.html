@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>carrom board</title>
+	<style type="text/css">
+		*{
+	      margin: 0;
+	      padding: 0;
+	      box-sizing: border-box;
+          }
+		body{
+			text-align: center;
+			background-color: lightblue;
+		}
+		nav{
+			text-align: center;
+		}
+		main{
+			position: relative;
+			height: 85vh;
+			width: 100vw;
+		}
+		#imgplayer{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			/*float: left;*/
+		}
+		#img1{
+			position: absolute;
+			transform: translate(-50%,-50%);
+			top: 50%;
+			left: 25%;
+			height: 200px;
+			/*float: left;*/
+		}
+		#img2{
+			height: 200px;
+			position: absolute;
+			transform: translate(-50%,-50%);
+			top: 50%;
+			left: 75%;
+		}
+		#board{
+			position: relative;
+			transform: translate(-50%,-50%);
+			top: 50%;
+			left: 50%;
+			background-color: #eadfcb;
+			border:5px;
+            border-style: solid;
+            border-color: gray;
+			outline: 2px 2px red;
+			height: 500px;
+			width: 500px;
+			text-align: center;            
+			outline-style: solid;
+            outline-offset: 2px;
+            outline-color: gray;
+           /* float: left;*/
+		}
+		.gole{
+			position: absolute;
+			border:2px;
+            border-style: solid;
+            height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			float: left;
+			outline-left:1px;
+			background-color: gainsboro;
+		}
+		.gole2{margin-left: 439px}
+		.goled{margin-top: 439px}
+		.golel{margin-left: 1px}
+		.golet{margin-top: 1px}
+
+		#center{
+			position: absolute;
+			transform: translate(-50%,-50%);
+			top: 50%;
+			left: 50%;
+			border:2px;
+            border-style: dotted;
+            height: 200px;
+			width: 200px;
+			border-radius: 50%;
+			outline-style: solid;
+            outline-offset: 5px;
+		}
+		#center1{
+			position: absolute;
+			transform: translate(-50%,-50%);
+			top: 50%;
+			left: 50%;
+			border:2px;
+            border-style: solid;
+            height: 20px;
+			width: 20px;
+			border-radius: 50%;
+			outline-style: solid;
+            outline-offset: 40px;
+            background-color: black;
+      		}
+      	.throw{
+      		/*background-color: lightblue;*/
+      		position: relative;
+			transform: translate(-50%,-50%);
+			top: 50%;
+			left: 50%;
+			height: 400px;
+			width: 400px;
+
+      	}
+      	#throwt{
+      		/*background-color: red;*/
+      		border:2px;
+            border-style: solid;
+			border-radius: 10%;
+      		height: 20px;
+      		width: 340px;
+      		position: absolute;
+			transform: translate(-50%,-50%);
+			top: 2%;
+			left: 50%;
+      	}
+      	#throwb{
+      		/*background-color: blue;*/
+      		border:2px;
+            border-style: solid;
+			border-radius: 10%;
+      		height: 20px;
+      		width: 340px;
+      		position: absolute;
+			transform: translate(-50%,-50%);
+			top: 98%;
+			left: 50%;
+      	}
+      	#throwl{
+      		/*background-color: green;*/
+      		border:2px;
+            border-style: solid;
+			border-radius: 10%;
+      		height: 340px;
+      		width: 20px;
+      		position: absolute;
+      		transform: translate(-50%,-50%);
+			top: 50%;
+			left: 2%;
+      	}
+      	#throwr{
+      		/*background-color: yellow;*/
+      		border:2px;
+            border-style: solid;
+			border-radius: 10%;
+      		height: 340px;
+      		width: 20px;
+      		position: absolute;
+      		transform: translate(-50%,-50%);
+			top: 50%;
+			left: 98%;
+      	 }
+      	.throws{
+      		position: absolute;
+      		transform: translate(-50%,-50%);
+			border:2px;
+            border-style: solid;
+            height: 20px;
+			width: 20px;
+			border-radius: 50%;
+			background-color: darkred;
+      	    }
+
+         .carkal{top: 50%;left: 0%;}
+      	 .carkal4{top: 0%;left: 50%;}
+      	 .carkal2{top: 50%;left: 100%;}
+      	 .carkal3{top: 100%;left: 50%;}
+
+
+      	 #false{
+      	 	/*background-color: lightblue;*/
+      	 	position: absolute;
+			transform: translate(-50%,-50%);
+			top: 50%;
+			left: 50%;
+			height: 325px;
+			width: 325px;
+
+      	 }
+
+      	.falsec{
+      		/*background-color: blue;*/
+      		position: absolute;
+			border:2px;
+            border-style: solid;
+            height: 35px;
+			width: 70px;
+            border-top-left-radius: 110px; 
+            border-top-right-radius: 110px;
+            border: solid;
+            border-bottom: 0;
+			border: solid gray;
+			border-bottom: 0;
+      	    }
+      	.falsec1{top: 7%;left: 2%;transform: rotate(135deg);}
+      	.falsec2{top: 8%;left: 76%; transform: rotate(225deg);}
+        .falsec3{top: 81%;left: 2%;transform: rotate(45deg);}
+        .falsec4{top: 81%;left: 75%;transform: rotate(-45deg);}
+        .fline{
+        	position: absolute;
+			/*border:1px red;*/
+			background-color: gray;
+            height: 150px;
+			width: 2px;
+        	top: -100%;
+        	left: 50%;
+            }
+        #diti{
+        	/*background-color: lightblue;*/
+      		position: absolute;
+			transform: translate(-50%,-50%);
+			top: 52%;
+			left: 52%;
+			height: 200px;
+			width: 200px;
+			border-radius: 50%;
+          }
+        .ditis{
+        	/*position: unset;
+			transform: translate(-50%,-50%);
+			top: 50%;
+			left: 50%;*/
+			float: left;
+			border:4px;
+            border-style: solid;
+            margin: 8px;
+            height: 20px;
+			width: 20px;
+			border-radius: 50%;
+			outline-style: solid;
+            outline-offset: 4px;
+            background-color: #000000f0;
+            box-shadow: 6px -3px 0px #000000f0, -6px 3px 0px #000000f0,-3px -6px 0px #000000f0, 3px 6px 0px #000000f0;
+            }
+        .yellow{
+            background-color: greenyellow;
+            border-color: yellowgreen;
+            outline-color: yellowgreen;
+            box-shadow: 6px -3px 0px greenyellow, -6px 3px 0px greenyellow,-3px -6px 0px greenyellow, 3px 6px 0px greenyellow;
+            }
+        .red{
+            background-color: red;
+            border-color: tomato;
+            outline-color: tomato;
+            box-shadow: 6px -3px 0px red, -6px 3px 0px red,-3px -6px 0px red, 3px 6px 0px red;
+           }
+        #stigar{
+        	position: absolute;
+			transform: translate(-50%,-50%);
+			top: 30%;
+			left: 11%;
+			border:15px;
+            border-style: solid;
+            height: 20px;
+			width: 20px;
+			border-radius: 50%;
+            border-color: red;
+            /*box-shadow: 6px -3px 0px red, -6px 3px 0px red,-3px -6px 0px red, 3px 6px 0px red*/;
+        }
+
+
+
+
+	</style>
+</head>
+<body>
+	<nav style="background-color: tomato"><h1>CARROM BOARD</h1></nav>
+    <!-- <a href="https://www.flaticon.com/free-icons/chess" title="chess icons" style="float: left;">Chess icons</a> -->
+	<main>
+		<div id="imgplayer">
+		     <img id="img1" src="img/player1.png">
+       	     <img id="img2" src="img/player2.png">
+		 </div>
+
+		 <div id="board"> 
+			 <div class="gole golel golet"></div>
+			 <div class="gole gole2 golet"></div>
+			 <div class="gole goled golel "></div>
+			 <div class="gole gole2 goled"></div>
+		 
+		     <div id="center"></div>
+		     <div id="center1"></div>
+
+		     <div class="throw"> 
+		     	<div id="throwt"> <div class="carkal throws"></div><div class="carkal2 throws"></div></div>
+		     	<div id="throwb"><div class="carkal throws"></div><div class="carkal2 throws"></div></div>
+		     	<div id="throwl"> <div class="carkal4 throws"></div><div class="carkal3 throws"></div></div>
+		     	<div id="throwr"><div class="carkal4 throws"></div><div class="carkal3 throws"></div></div>	
+		     </div>
+
+		     <div id="false">
+		     	<div class="falsec falsec1"> <div class="fline"></div></div>
+		     	<div class="falsec falsec2"> <div class="fline"></div></div>
+		     	<div class="falsec falsec3"> <div class="fline"></div></div>
+		     	<div class="falsec falsec4"> <div class="fline"></div></div>
+
+		     </div>
+
+		     <div id="diti">
+		     	  <div class="ditis"></div>
+		     	  <div class="ditis yellow"></div>
+		     	  <div class="ditis"></div>
+		     	  <div class="ditis yellow"></div>
+		     	  <div class="ditis"></div>
+		     	  <div class="ditis yellow"></div>
+		     	  <div class="ditis"></div>
+		     	  <div class="ditis yellow"></div>
+		     	  <div class="ditis"></div>
+		     	  <div class="ditis yellow"></div>
+		     	  <div class="ditis"></div>
+		     	  <div class="ditis yellow"></div>
+		     	  <div class="ditis red"></div>
+		     	  <div class="ditis yellow"></div>
+		     	  <div class="ditis"></div>
+		     	  <div class="ditis yellow"></div>
+		     	  <div class="ditis"></div>
+		     	  <div class="ditis yellow"></div>
+		     	  <div class="ditis"></div>
+		     	  <div class="ditis yellow"></div>
+		     	  <div class="ditis"></div>
+		     	  <div class="ditis yellow"></div>
+		     	  <div class="ditis"></div>
+		     	  <div class="ditis yellow"></div>
+		     	  <div class="ditis"></div>
+		     </div> 
+		     <div id="stigar"></div>   
+       	</div>
+       <!-- 	<br><hr>/<br><hr><br><hr>/<br><hr><br><hr>/<br><hr><br><hr>/<br><hr><br><hr>/<br><hr><br><hr>/<br><hr> -->
+
+	</main>
+</body>
+</html>
